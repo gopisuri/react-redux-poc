@@ -1,0 +1,2 @@
+export const ADD_COUNTER = 'ADD_COUNT';
+export const REMOVE_COUNTER = 'REMOVE_COUNTER';

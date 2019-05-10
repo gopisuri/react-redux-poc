@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'antd/dist/antd.css';
+import Child from './layout';
+
+
+
+class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+ image: './image1.png',
+ default : './default.png'
+           
+          };
+
+  }
+  
+
+componentDidMount()
+{
+  this.interval = setInterval(() => this.setState({ time: Date('dateString') }), 1000);
+  console.log("this is componentDidMount");
+  
 }
+
+ componentDidUpdate()
+ {
+  console.log("this is componentDidUpdate");
+ }
+
+
+
+    render() {
+      
+
+        return (
+          <div >
+         <Child />
+          </div>
+        )
+      }
+  }
+
 
 export default App;
